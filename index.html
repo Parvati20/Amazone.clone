@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="nav-logo border">
+                <div class="logo">
+                    <img src="images.png" alt="">
+                </div>
+            </div>
+            <div class="nav-address">
+                <p class="first">Delivering to Pune 411030</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="sec">Ubdate location</p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>All</option>
+                </select>
+                <input placeholder="Search Amazon.in" class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="lang">
+                <img
+                    src="data:image/png;base64,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">
+                <p>EN</p>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="nav-signin">
+                <p class="nav-second">Hello, sign in</p>
+                <h4>Account & list</h4>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+
+            <div class="nav-return border">
+                <p class="nav-second">Return</p>
+                <h4>& Orders</h4>
+            </div>
+            <div class="nav-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Cart
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-all">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <div class="panel-ops">
+                <p>Fresh</p>
+                <p>Amazon miniTV</p>
+                <P>Sell</P>
+                <p>Best Sellers</p>
+                <p>Mobiles</p>
+                <p>Todays Deals</p>
+                <p>Electronics</p>
+                <p>Customer Service</p>
+                <p>Prime</p>
+            </div>
+            <div class="panel-deals">
+                New Launches form Mobiles ,Electronics & more |Shop
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div class="left-icon">
+            <i class="fa-solid fa-square-caret-left"></i>
+        </div>
+        <div class="right-icon">
+            <i class="fa-solid fa-square-caret-right"></i>
+        </div>
+    </div>
+    <main class="main">
+        <div class="card-product-container">
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="Cloth for kids.png">
+                        <p>Cloth for kids </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="cloth kids.png">
+                        <p>Cloths</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="tops brands.png">
+                        <p>Tops For Brand </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="girls cloth img.jpg">
+                        <p>girls Cloth </p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="girls cloth img.jpg">
+                        <p>Girls Cloth</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="girls top.jpg">
+                        <p>Girls Top</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="women tos img 2.webp">
+                        <p>Women Tops</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="Women tops.avif">
+                        <p>Women Tops</p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="Gold Plated Neckless.jpg">
+                        <p>Gold plated Neckless</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="lock Pendant.jpg">
+                        <p>Lock Pendant </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="plated neckless.jpg">
+                        <p>planted Neckless</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="neckless set.webp">
+                        <p>Neckless Set </p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="pears soap 3.jpg">
+                        <p>Pears Soap</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="soap 2.jpg">
+                        <p>Soap</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="soap 4.avif">
+                        <p>Soaps </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="skin shine soap.webp">
+                        <p>skin shine soap</p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="bathroom cleaner.jpg">
+                        <p>Bathroom cleaner</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="harpic cleaner 2.jpg">
+                        <p>Harpic Cleaner </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="cleaner 4.jpg">
+                        <p>Cleaner</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="cleaner img.jpg">
+                        <p>Bathroom Cleaner </p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="Chiffon Saree.jpg">
+                        <p>Chiffon saree</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="cotten saree.jpg">
+                        <p>Cotten saree</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="plain saree.jpg">
+                        <p>plain saree </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="super net saree.jpg">
+                        <p>Super Net Saree</p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+
+        <!-- </div> -->
+    <!-- </main> -->
+    <!-- <main class="main"> -->
+        <!-- <div class="card-product-container"> -->
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="Chapple 1.webp">
+                        <p> Girls Sliper</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="sandel 1.jpg">
+                        <p> Girls Sandel </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="shooes 1.webp">
+                        <p>Shooes </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="shandel boyes.jpg">
+                        <p>Boyes sandel </p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="oppo 2.png">
+                        <p>Opp Phone</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="redmi 2.png">
+                        <p>Redmi Phones</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="apple 2.jpg">
+                        <p>Apple Phones</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="samsung 2.avif">
+                        <p>Samsung Phone</p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="Earphone 3 img.webp">
+                        <p>Earphone</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="Earphone 3.webp">
+                        <p>bluetooth</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="wireless bluetooth 3.jpg">
+                        <p>wireless bluetooth</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="audio earphone.webp">
+                        <p>Audio Earphone</p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="deep  fryers.jpg">
+                        <p>Deep Fryers </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="copper.jpg">
+                        <p>copper kitchenware </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="stainless steel.jpg">
+                        <p>vegetable keeper </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="egg boilers.jpg">
+                        <p>egg boilers </p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="waffle maker machine.jpg">
+                        <p>waffle maker machine </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="bakeware sets.jpg">
+                        <p>bakeware sets</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="lamp.jpg">
+                        <p>table lamp</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="home temple 4.webp">
+                        <p>home temple</p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+            <div class="card-product">
+                <h2>the normal shop</h2>
+                <div class="card-product-nested-card">
+                    <div class="card-nested">
+                        <img src="fabric chair.jpg">
+                        <p>fabric chair</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="french solid wood chair.webp">
+                        <p>solid wood chair</p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="living room chair.jpg">
+                        <p>living room chair </p>
+                    </div>
+                    <div class="card-nested">
+                        <img src="outdoor.jpg">
+                        <p>ourdooe chair</p>
+                    </div>
+                </div>
+                <button class="card-product-btn">See more</button>
+            </div>
+
+        </div>
+    </main>
+    <section class="today_deals_container">
+        <div class="today_deals_heading">
+            <h1>Today's Deals</h1>
+            <p><a href="#">See all deals</a></p>
+        </div>
+
+        <div class="today_deals_product_container">
+            <div class="today_deal_btn">
+                <button class="left-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="left-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="today_deals_product_item">
+                <img src="tea pot 4.avif"/>
+                <div class="discount_container">
+                    <a href="#">Up to 52% off</a>
+                    <a href="#">Deal of the day</a>
+
+                </div>
+                <br>
+                <p>adidas and campus footwear</p>
+            </div>
+
+            <div class="today_deals_product_item">
+                <img src="home temple 4.webp">
+                <div class="discount_container">
+                    <a href="#">Up to 52% off</a>
+                    <a href="#">Deal of the day</a>
+
+                </div>
+                <br>
+                <p>adidas and campus footwear</p>
+            </div>
+
+            <div class="today_deals_product_item">
+                <img src="dreeing table img.jpg">
+                <div class="discount_container">
+                    <a href="#">Up to 52% off</a>
+                    <a href="#">Deal of the day</a>
+
+                </div>
+                <br>
+                <p>adidas and campus footwear</p>
+            </div>
+
+            <div class="today_deals_product_item">
+                <img src="curtains 4.webp">
+                <div class="discount_container">
+                    <a href="#">Up to 52% off</a>
+                    <a href="#">Deal of the day</a>
+
+                </div>
+                <br>
+                <p>adidas and campus footwear</p>
+            </div>
+
+            <div class="today_deals_product_item">
+                <img src="apple 2.jpg">
+                <div class="discount_container">
+                    <a href="#">Up to 52% off</a>
+                    <a href="#">Deal of the day</a>
+
+                </div>
+                <br>
+                <p>adidas and campus footwear</p>
+            </div>
+
+            <div class="today_deals_product_item">
+                <img src="mixer img 1.jpg">
+                <div class="discount_container">
+                    <a href="#">Up to 52% off</a>
+                    <a href="#">Deal of the day</a>
+                </div>
+                <br>
+                <p>adidas and campus footwear</p>
+            </div>
+
+            <div class="today_deals_product_item">
+                <img src="hair oil box 6.jpg">
+                <div class="discount_container">
+                    <a href="#">Up to 52% off</a>
+                    <a href="#">Deal of the day</a>
+                </div>
+                <br>
+                <p>adidas and campus footwear</p>
+            </div>
+        </div>
+        </div>
+    </section>
+</main>
+    <div class="shop-section">
+        <div class="box1 box">
+            <div clss="box-content">
+                <h3>Water Bottle</h3>
+                <div class="box-img" style="background-image: url('water\ bottle\ img.jpg');"></div>
+                <p>See more</p>
+            </div>
+        </div>
+        <div class="box2 box">
+            <div clss="box-content">
+                <h2>Showpieces</h2>
+                <div class="box-img" style="background-image:url('Showpieces.jpg') ;"></div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="box3 box">
+            <div clss="box-content">
+                <h3>Lamp For Home Decoration</h3>
+                <div class="box-img" style="background-image: url('lamp.jpg');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box4 box">
+            <div clss="box-content">
+                <h3>Softsens Soap</h3>
+                <div class="box-img" style="background-image: url('Softsens\ Soap.jpg');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box1 box">
+            <div clss="box-content">
+                <h3>Beautiful Sofa</h3>
+                <div class="box-img" style="background-image: url('sofa.jpg');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box2 box">
+            <div clss="box-content">
+                <h2>Dressing Table</h2>
+                <div class="box-img" style="background-image:url('dreeing\ table\ img.jpg') ;"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box3 box">
+            <div clss="box-content">
+                <h3>Makeup kits</h3>
+                <div class="box-img" style="background-image: url('makeup\ kit.webp');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box4 box">
+            <div clss="box-content">
+                <h3>Shoulder Bags</h3>
+                <div class="box-img" style="background-image: url('bag\ 1.jpg');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box1 box">
+            <div clss="box-content">
+                <h3>jwalri Box</h3>
+                <div class="box-img" style="background-image: url('jwalri\ box2.jpg');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box2 box">
+            <div clss="box-content">
+                <h2>chochlete</h2>
+                <div class="box-img" style="background-image:url('chochlete.jpg') ;"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box3 box">
+            <div clss="box-content">
+                <h3>Girls Top</h3>
+                <div class="box-img" style="background-image: url('tops.jpg');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box4 box">
+            <div clss="box-content">
+                <h3>Tea Table</h3>
+                <div class="box-img" style="background-image: url('tea\ table.jpg');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box1 box">
+            <div clss="box-content">
+                <h3>GirlsKurti</h3>
+                <div class="box-img" style="background-image: url('kurti.jpg');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box2 box">
+            <div clss="box-content">
+                <h2>Modern Bed</h2>
+                <div class="box-img" style="background-image:url('bed.jpg') ;"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box3 box">
+            <div clss="box-content">
+                <h3>Nokya Phone</h3>
+                <div class="box-img" style="background-image: url('nokya\ 1.webp');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+        <div class="box4 box">
+            <div clss="box-content">
+                <h3>Paithani Saree</h3>
+                <div class="box-img" style="background-image: url('sadi.webp');"></div>
+                <button>See more</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="container">
+        <div class="slider-wrapper">
+            <div class="imge-list">
+                <img src="cooker.jpg" alt="" class="image-item">
+                <img src="pans.jpg" alt="" class="image-item">
+                <img src="plates.jpg" alt="" class="image-item">
+                <img src="dining table.jpg" alt="" class="image-item">
+                <img src="juicer.jpg" alt="" class="image-item">
+                <img src="pilloes.jpg" alt="" class="image-item">
+
+
+            </div>
+        </div>
+    </div>  -->
+    <!-- <footer>
+        <div class="foot-panel1">
+            Back to top
+        </div>
+        <div class="foot-panel2">
+            <ul>
+                <p> Get to Know US</p>
+                <a>Careers</a>
+                <a>Press Releases</a>
+                <a>Amazon science</a>
+
+            </ul>
+            <ul>
+                <p> Contact with us</p>
+                <a>Facebook</a>
+                <a>Twitter</a>
+                <a>Instagram</a>
+
+            </ul>
+            <ul>
+                <p>Make Money With Us</p>
+                <a>sell under Amazon Accelerator</a>
+                <a>Protect and Build Your Brand</a>
+                <a>Amazon Global Selling</a>
+                <a>Become an Affiliate</a>
+                <a>Fulfilment by Amazon</a>
+                <a>Amazon Pay on Mercgants</a>
+
+            </ul>
+            <ul>
+                <p> Lets Us Help You</p>
+                <a>COVID-19 and Amazon</a>
+                <a>Returns Center</a>
+                <a>About Amazon</a>
+                <a>100% Purchase Protection </a>
+                <a>Amazon App Download</a>
+                <a>Help</a>
+
+            </ul>
+        </div>
+        <div class="foot-panel3">
+            <img src="images.png" alt="img">
+        </div>
+        <div class="foot-panel4">
+            <div class="pages">
+                <a>Condition of use</a>
+                <a>Privacy Notice</a>
+                <a>Your Ads Privacy Choices</a>
+            </div>
+            <div class="copy-right">
+                © 1996-2024, Amazon.com, Inc. or its affiliates
+            </div>
+        </div>
+    </footer>
+ -->
+<section class="signin">
+    <div class="signinbtn">
+        <div class="para1">
+            <p>See personalized recommendations</p>
+        </div>
+        <div class="para2">
+            <p>Sign in</a></p>
+        </div>
+        <div class="para3">
+            <p>New Customer? <a id="starthere" href="#">Start here.</a></p>
+        </div>
+
+    </div>
+</section>
+
+<div class="backtotop">
+    <p>Back to top</p>
+</div>
+
+<footer>
+    <div class="footerone">
+        <div class="footone_para">
+            <div class="allfootpara">
+                <div class="footone_para1">
+                    <h4>Get to Know Us</h4>
+                    <ul>
+                        <li class="underline">About Us</li>
+                        <li class="underline">Careers</li>
+                        <li class="underline">Press Releases</li>
+                        <li class="underline">Amazon Science</li>
+
+                    </ul>
+
+                </div>
+                <div class="footone_para2">
+                    <h4>Connect with Us</h4>
+                    <ul>
+                        <li class="underline">Facebook</li>
+                        <li class="underline">Twitter</li>
+                        <li class="underline">Instagram</li>
+                    
+                    </ul>
+
+                </div>
+                <div class="footone_para2">
+                    <h4>Make Money with Us</h4>
+                    <ul>
+                        <li class="underline">sell on Amazon</li>
+                        <li class="underline">sell under Amazon Accelerator</li>
+                        <li class="underline">Protect and Build Your Brand</li>
+                        <li class="underline">Amazon Global Selling</li>
+                        <li class="underline">Become an Affiliate</li>
+                        <li class="underline">Fulfilment by Amazon</li>
+                        <li class="underline">Advertise Your Products</li>
+                        <li class="underline">Amazon Pay on Merchants</li>
+                        
+                    </ul>
+
+                </div>
+                <div class="footone_para2">
+                    <h4>Let Us Help You</h4>
+                    <ul>
+                        <li class="underline">COVID-19 and Amazon</li>
+                        <li class="underline">Your Account</li>
+                        <li class="underline">Returns Center</li>
+                        <li class="underline">100% Purchase Protection</li>
+                        <li class="underline">Amazon App Download</li>
+                        <li class="underline">Help</li>
+                        
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="footertwo">
+        <div class="foot2logo">
+            
+            <img class="gap" src="images.png">
+        <div id="drop_down">
+            <i  class="gap1 fa-solid fa-globe"></i>
+            <span class="gap1">English</span>
+            <i class="fa-solid fa-caret-down "></i>
+            <i class="fa-solid fa-caret-up "></i>
+        </div>
+
+        </div>
+
+
+        
+        <div class="foot2link">
+            <p  class="underline" href="#">Australia</p>
+            <p  class="underline" href="#">Brazil</p>
+            <p  class="underline" href="#">Canada</p>
+            <p  class="underline" href="#">China</p>
+            <p  class="underline" href="#">France</p>
+            <p  class="underline" href="#">Germany</p>
+            <p  class="underline" href="#">Italy</p>
+            <p  class="underline" href="#">Japan</p>
+            <p  class="underline" href="#">Mexico</p>
+            <p  class="underline" href="#">Netherlands</p>
+            <p  class="underline" href="#">Poland</p>
+            <p  class="underline" href="#">Singapore</p>
+            <p  class="underline" href="#">Spain</p>
+            <p  class="underline" href="#">Turkey</p>
+            <p  class="underline" href="#">Turkey</p>
+           
+            <p  class="underline" href="#">United Kingdom</p>
+            <p  class="underline" href="#">United States</p>
+
+
+        </div>
+        
+        <div class="footerthree">
+            <div class="others_link">
+                <div class="otherslink_one">
+                    <div class="footlink1 underline">
+                        <p class="linkfirst">AbeBooks</p>
+                        <p class="link2nd">Books,art <br> collectibles</p>
+                    </div>
+                    <div class="footlink1 underline">
+                        <p class="linkfirst">Shopbop</p>
+                        <p class="link2nd">Designer <br> Fashion Brands</p>
+                        </div>
+                    
+
+                        
+
+                        
+                    </div>
+
+                    <div class="otherslink_one">
+                        <div class="footlink1 underline">
+                            <p class="linkfirst">Amazon Web Services</p>
+                            <p class="link2nd">Scalable Cloud <br>Computing Services</p>
+                        </div>
+                        <div class="footlink1 underline">
+                            <p class="linkfirst">Amazon Business</p>
+                            <p class="link2nd">Everything For Your Business</p>
+                            </div>
+                       
+                            
+
+                            
+                        </div>
+                        <div class="otherslink_one">
+                            <div class="footlink1 underline">
+                                <p class="linkfirst">Audible</p>
+                                <p class="link2nd">Download <br> Audio Books</p>
+                            </div>
+                            <div class="footlink1 underline">
+                                <p class="linkfirst">Prime Now</p>
+                                <p class="link2nd">2-Hours Delivery on Everyday items</p>
+                                </div>
+                            
+    
+                                
+    
+                                
+                            </div>
+                            <div class="otherslink_one">
+                                <div class="footlink1 underline">
+                                    <p class="linkfirst">IMDB</p>
+                                    <p class="link2nd">Movies,TV <br>Celebrities</p>
+                                </div>
+                                <div class="footlink1 underline">
+                                    <p class="linkfirst">Amazon Prime Music</p>
+                                    <p class="link2nd">100 million songs,ad-free <br>Over 15 million podcast episodes</p>
+                                    </div>
+                                
+        
+                                    
+        
+                                    
+                                </div>
+        
+    
+
+                    
+               
+
+
+                </div>
+            </div>
+
+            
+
+        <div class="copyright">
+            <div class="copyright_link">
+                <div class="clink">
+                    <p class="underline">conditions of use & sale</p>
+                    <p class="underline">Interest-Based Ads Notice</p>
+                    <p class="underline">Cookies Notice</p>
+
+                    <p class="underline">Privacy Notice</p>
+
+
+                </div>
+                <div class="cright">
+                    <p> © 1996-2024, Amazon.com, Inc. or its affiliates</p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</footer>
+</body>
+
+</html>
